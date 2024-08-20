@@ -14,7 +14,4 @@ phases:
       - zip -r ../build-output.zip .  # Create ZIP file
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
-  base-directory: dist/  # Replace with the directory containing your build output
-  name: build-output.zip  # The name of the ZIP file to be created
+    - build-output.zip
