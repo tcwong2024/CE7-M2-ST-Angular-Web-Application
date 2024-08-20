@@ -9,6 +9,9 @@ phases:
     commands:
       - echo Building the project
       - ng build
+      - echo Creating ZIP file
+      - cd dist/  # Adjust if necessary
+      - zip -r ../build-output.zip .  # Create ZIP file
 artifacts:
   files:
     - '**/*'
