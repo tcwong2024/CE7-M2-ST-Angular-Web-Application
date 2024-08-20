@@ -1,0 +1,12 @@
+version: 1.0
+phases:
+  install:
+    commands:
+      - npm install
+  build:
+    commands:
+      - ng build --prod
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist/cycling-experience
