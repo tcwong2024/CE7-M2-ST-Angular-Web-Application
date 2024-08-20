@@ -11,7 +11,7 @@ phases:
       - ng build
 artifacts:
   files:
-      - '**/*'
-    discard-paths: yes
-    base-directory: dist/  # Replace with the directory containing your build output
-    name: build-output.zip  # The name of the ZIP file to be created
+    - '**/*'
+  discard-paths: yes
+  base-directory: dist/  # Replace with the directory containing your build output
+  name: build-output.zip  # The name of the ZIP file to be created
