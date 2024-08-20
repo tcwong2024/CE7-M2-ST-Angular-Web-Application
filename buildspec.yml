@@ -9,4 +9,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: dist/cycling-experience
+  base-directory: 'dist/cycling-experience'
