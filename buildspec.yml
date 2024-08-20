@@ -3,11 +3,15 @@ phases:
   install:
     commands:
       - npm install -g @angular/cli  # Install Angular CLI globally
+      - echo Installing dependencies
       - npm install
   build:
     commands:
+      - echo Building the project
       - ng build
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'dist/cycling-experience'
+      - '**/*'
+    discard-paths: yes
+    base-directory: dist/  # Replace with the directory containing your build output
+    name: build-output.zip  # The name of the ZIP file to be created
