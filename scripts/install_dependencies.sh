@@ -1,2 +1,3 @@
 #!/bin/bash
-npm install -g @angular/cli
+sudo yum install httpd -y
+

@@ -1,17 +1,29 @@
 version: 0.2
+env:
+  variables:
+    APP_NAME: "cycling-experience"
 phases:
   install:
+    runtime-versions:
+      nodejs: 20
     commands:
-      - npm install -g @angular/cli  # Install Angular CLI globally
-      - echo Installing dependencies
-      - npm install
+      - echo install process started
+      - npm install && npm install -g @angular/cli
   build:
     commands:
+      - echo build process started now
+      - npm install
       - echo Building the project
       - ng build
-      - echo Creating ZIP file
-      - cd dist/  # Adjust if necessary
-      - zip -r ../build-output.zip .  # Create ZIP file
+  post_build:
+    commands:
+      - echo build process finished, we should uplload to S3 now
+      - cp -r scripts dist/$APP_NAME
+      - cp appspec.yml dist/$APP_NAME
+      - cd dist/$APP_NAME
+      - ls -la
+      # - aws s3 sync . s3://prdpfirstbucket --delete      
 artifacts:
   files:
-    - build-output.zip
+    - dist/**/*
+  discard-paths: yes

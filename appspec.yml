@@ -4,6 +4,35 @@ files:
   - source: /
     destination: /var/www/html
 hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies.sh
+  BeforeInstall:
+    - location: install_dependencies.sh
       timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: start_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: stop_server.sh
+      timeout: 300
+      runas: root
+
+# version: 0.0
+# os: linux
+# files:
+#   - source: /
+#     destination: /var/www/html/
+# hooks:
+#   BeforeInstall:
+#     - location: ./scripts/UnzipResourceBundle.sh
+#     - location: ./scripts/UnzipDataBundle.sh
+#   AfterInstall:
+#     - location: ./scripts/RunResourceTests.sh
+#       timeout: 180
+#   ApplicationStart:
+#     - location: ./scripts/RunFunctionalTests.sh
+#       timeout: 3600
+#   ValidateService:
+#     - location: ./scripts/MonitorService.sh
+#       timeout: 3600
+#       runas: codedeployuser
