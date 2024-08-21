@@ -15,6 +15,9 @@ phases:
       - npm install
       - echo Building the project
       - ng build
+      - echo Moving images to assets folder
+      - mkdir -p dist/$APP_NAME/assets
+      - mv dist/$APP_NAME/*.jpg dist/$APP_NAME/assets/  # Adjust this for your image types (e.g., .png, .jpeg)
   post_build:
     commands:
       - echo build process finished, we should uplload to S3 now
