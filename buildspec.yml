@@ -12,22 +12,15 @@ phases:
   build:
     commands:
       - echo build process started now
-      - npm install
       - echo Building the project
       - ng build
   post_build:
     commands:
       - echo build process finished, we should upload to S3 now
       - cp -r scripts dist/$APP_NAME
-      #- cp -r assets dist/$APP_NAME
       - cp appspec.yml dist/$APP_NAME
       - cd dist/$APP_NAME
-      # - echo Moving images to assets folder
-      #- sudo mkdir -p dist/$APP_NAME/assets
-      #- if ls dist/$APP_NAME/*.jpg 1> /dev/null 2>&1; then sudo mv dist/$APP_NAME/*.jpg dist/$APP_NAME/assets/; fi      
       - ls -la
-      # - aws s3 sync . s3://prdpfirstbucket --delete      
 artifacts:
   files:
     - dist/**/*
-  # discard-paths: yes
