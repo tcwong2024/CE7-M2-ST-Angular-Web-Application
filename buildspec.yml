@@ -26,5 +26,5 @@ artifacts:
     - '**/*'
     - appspec.yml
     - scripts/**
-  base-directory: 'dist'
+  base-directory: 'dist/$APP_NAME'
   discard-paths: no 
