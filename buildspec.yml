@@ -1,7 +1,7 @@
 version: 0.2
-env:
-  variables:
-    APP_NAME: "cycling-experience"
+# env:
+#   variables:
+#     APP_NAME: "cycling-experience"
 phases:
   install:
     runtime-versions:
@@ -23,7 +23,6 @@ phases:
       - ls -la
 artifacts:
   files:
-    # - dist/**/*
-    - /**/*
-    #- appspec.yml
-    #- scripts/**
+    - dist/**/*
+    - appspec.yml
+    - scripts/**
