@@ -19,7 +19,7 @@ phases:
     commands:
       - echo build process finished, we should upload to S3 now
       - cp -r scripts dist/$APP_NAME
-      - cp -r assetss dist/$APP_NAME
+      - cp -r assets dist/$APP_NAME
       - cp appspec.yml dist/$APP_NAME
       - cd dist/$APP_NAME
       # - echo Moving images to assets folder
