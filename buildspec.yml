@@ -17,12 +17,13 @@ phases:
   post_build:
     commands:
       - echo build process finished, we should upload to S3 now
-      - cp -r scripts dist/$APP_NAME
-      - cp appspec.yml dist/$APP_NAME
-      - cd dist/$APP_NAME
+      #- cp -r scripts dist/$APP_NAME
+      #- cp appspec.yml dist/$APP_NAME
+      #- cd dist/$APP_NAME
       - ls -la
 artifacts:
   files:
-    - dist/**/*
-    - appspec.yml
-    - scripts/**
+    # - dist/**/*
+    - /**/*
+    #- appspec.yml
+    #- scripts/**
