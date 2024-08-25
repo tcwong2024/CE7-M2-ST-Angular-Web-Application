@@ -23,11 +23,8 @@ phases:
       - ls -la
 artifacts:
   files:
+    - '**/*'
     - appspec.yml
     - scripts/**
-    - index.html
-    - *.ico
-    - *.txt
-    - *.js
-    - *.css
+  base-directory: 'dist'
   discard-paths: no 
