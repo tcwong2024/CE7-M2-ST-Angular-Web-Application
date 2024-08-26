@@ -1,7 +1,7 @@
 version: 0.2
-# env:
-#   variables:
-#     APP_NAME: "cycling-experience"
+env:
+  variables:
+    APP_NAME: "cycling-experience"
 phases:
   install:
     runtime-versions:
@@ -12,7 +12,6 @@ phases:
   build:
     commands:
       - echo build process started now
-      - echo Building the project
       - ng build
   post_build:
     commands:
@@ -27,4 +26,4 @@ artifacts:
     - appspec.yml
     - scripts/**
   base-directory: 'dist/$APP_NAME'
-  discard-paths: no 
+
